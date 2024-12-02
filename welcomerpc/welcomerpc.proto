@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package welcomerpc;
+option go_package="./welcomerpc";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+service Welcomerpc {
+  rpc Ping(Request) returns(Response);
+}

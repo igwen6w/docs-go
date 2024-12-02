@@ -1,0 +1,4 @@
+### GET request to example server
+GRPC localhost:8080 welcomerpc.Welcomerpc/ping
+
+### POST request to example server
