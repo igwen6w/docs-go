@@ -1,0 +1,10 @@
+Name: SysUserCenterApi
+Host: 0.0.0.0
+Port: 1001
+mode: dev
+
+Auth:
+  AccessSecret: a-123456
+  AccessExpire: 3600
+
+

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+package pb;
+
+message SysUser {
+  int64 id = 1;
+  string account = 2;
+  string nickname = 3;
+}
+
+message SysUserAuth {
+  int64 id = 1;
+  int64 userId = 2;
+  string authType = 3;
+  string authKey = 4;
+}
+
+message LoginReq {
+  string  authType = 1;
+  string authKey = 2;
+  string  password = 3;
+}
+
+message LoginResp {
+  string accessToken = 1;
+  int64  accessExpire = 2;
+  int64  refreshAfter = 3;
+}
+
+service SysUserCenter {
+  rpc Login (LoginReq) returns (LoginResp);
+  rpc GetSysUser (SysUserAuth) returns (SysUser);
+}
